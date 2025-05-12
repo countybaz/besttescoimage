@@ -4,6 +4,7 @@ import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
 import { ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import CustomerReviews from "@/components/CustomerReviews";
 
 const StartScreen = () => {
   const { goToNextStep } = useSurvey();
@@ -40,7 +41,10 @@ const StartScreen = () => {
         START NOW <ArrowRight className="ml-2" />
       </Button>
 
-      {/* Removed FacebookReviews section */}
+      {/* Add Customer Reviews */}
+      <div className="mt-8">
+        <CustomerReviews />
+      </div>
 
       {/* Add some space at the bottom */}
       <div className="h-16 md:h-10"></div>

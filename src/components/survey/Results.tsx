@@ -51,8 +51,6 @@ const Results = () => {
             className="mb-4"
           />
           
-          {/* Removed duplicate Timer component */}
-          
           <div className="mb-4 space-y-3">
             {/* Sainsbury's Gift Card Image */}
             <div className="bg-white p-4 rounded-lg shadow-sm flex justify-center">
@@ -68,8 +66,6 @@ const Results = () => {
                       loading="eager"
                       width="280"
                       height="158"
-                      fetchPriority="high"
-                      decoding="async"
                     />
                   )}
                 </AspectRatio>

@@ -25,47 +25,36 @@ const Step5 = () => {
     const rewardsCheckTime = 6500; // 6.5 seconds
     const completionTime = 7500; // 7.5 seconds
     
-    // Calculate progress percentages for each milestone
-    const savedProgressPercent = Math.floor((savedCheckTime / completionTime) * 100);
-    const eligibleProgressPercent = Math.floor((eligibleCheckTime / completionTime) * 100);
-    const rewardsProgressPercent = Math.floor((rewardsCheckTime / completionTime) * 100);
+    // Progress update interval
+    const progressUpdateInterval = 50; // 50ms
+    const totalSteps = completionTime / progressUpdateInterval;
+    const incrementPerStep = 100 / totalSteps;
     
-    // Handle progress animation with specific targets for each milestone
+    // Start progress animation
     let currentProgress = 0;
     const progressInterval = setInterval(() => {
-      setProgressValue(prev => {
-        // Determine target based on which checks are visible
-        let target = 100;
-        if (!checks.saved) target = savedProgressPercent - 5;
-        else if (!checks.eligible) target = eligibleProgressPercent - 5;
-        else if (!checks.rewards) target = rewardsProgressPercent - 5;
-        
-        // Increment progress slightly
-        currentProgress = Math.min(prev + 1, target);
-        return currentProgress;
-      });
-    }, 50);
+      currentProgress = Math.min(currentProgress + incrementPerStep, 100);
+      setProgressValue(Math.floor(currentProgress));
+    }, progressUpdateInterval);
 
-    // Handle check animations with each tick appearing only after the previous one
+    // Handle check animations sequentially
     const savedTimer = setTimeout(() => {
       setChecks(prev => ({ ...prev, saved: true }));
-      setProgressValue(savedProgressPercent);
     }, savedCheckTime);
     
     const eligibleTimer = setTimeout(() => {
       setChecks(prev => ({ ...prev, eligible: true }));
-      setProgressValue(eligibleProgressPercent);
     }, eligibleCheckTime);
     
     const rewardsTimer = setTimeout(() => {
       setChecks(prev => ({ ...prev, rewards: true }));
-      setProgressValue(rewardsProgressPercent);
     }, rewardsCheckTime);
 
     // Set processing to false after all checks complete
     const completeTimer = setTimeout(() => {
       setIsProcessing(false);
       setProgressValue(100);
+      clearInterval(progressInterval);
     }, completionTime);
 
     // Auto-progress after a longer delay to ensure button is visible
@@ -92,7 +81,7 @@ const Step5 = () => {
       
       <div className="space-y-6 mb-8 mt-6">
         <div className="flex items-start">
-          <div className={`w-6 h-6 rounded-full mt-1 mr-3 flex items-center justify-center ${checks.saved ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
+          <div className={`w-6 h-6 rounded-full mt-1 mr-3 flex items-center justify-center transition-colors duration-300 ${checks.saved ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
             {checks.saved && <Check className="h-4 w-4" />}
           </div>
           <div>
@@ -102,7 +91,7 @@ const Step5 = () => {
         </div>
         
         <div className="flex items-start">
-          <div className={`w-6 h-6 rounded-full mt-1 mr-3 flex items-center justify-center ${checks.eligible ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
+          <div className={`w-6 h-6 rounded-full mt-1 mr-3 flex items-center justify-center transition-colors duration-300 ${checks.eligible ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
             {checks.eligible && <Check className="h-4 w-4" />}
           </div>
           <div>
@@ -112,7 +101,7 @@ const Step5 = () => {
         </div>
         
         <div className="flex items-start">
-          <div className={`w-6 h-6 rounded-full mt-1 mr-3 flex items-center justify-center ${checks.rewards ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
+          <div className={`w-6 h-6 rounded-full mt-1 mr-3 flex items-center justify-center transition-colors duration-300 ${checks.rewards ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
             {checks.rewards && <Check className="h-4 w-4" />}
           </div>
           <div>
@@ -134,10 +123,9 @@ const Step5 = () => {
         {isProcessing ? "Please wait while we process your information..." : "Processing complete!"}
       </p>
 
-      {/* Add a continue button that's clearly visible */}
       <Button 
         onClick={goToNextStep} 
-        className={`w-full py-5 text-lg bg-green-600 hover:bg-green-700 shadow-lg transition-opacity ${isProcessing ? 'opacity-0' : 'opacity-100'} ${isMobile ? 'fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20' : ''}`}
+        className={`w-full py-5 text-lg bg-green-600 hover:bg-green-700 shadow-lg transition-opacity duration-300 ${isProcessing ? 'opacity-0' : 'opacity-100'} ${isMobile ? 'fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20' : ''}`}
         disabled={isProcessing}
       >
         Continue to Your Reward

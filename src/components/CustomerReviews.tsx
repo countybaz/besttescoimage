@@ -52,12 +52,12 @@ const CustomerReviews = () => {
     });
   }, []);
 
-  // Define all reviews in one array for Sainsbury's Review Program
+  // Define all reviews in one array for Sainsbury's Review Program with more unique profile pictures
   const allReviews: Review[] = [
     {
       id: 1,
       name: "Sarah Johnson",
-      avatar: "https://i.pravatar.cc/40?img=1",
+      avatar: "https://i.pravatar.cc/150?img=32",
       time: "2 hours ago",
       text: "Just received my £100 Sainsbury's gift card! The survey was super easy and the card arrived quickly. So happy with this program!",
       likes: 32,
@@ -68,7 +68,7 @@ const CustomerReviews = () => {
     {
       id: 2,
       name: "Michael Thomas",
-      avatar: "https://i.pravatar.cc/40?img=5",
+      avatar: "https://i.pravatar.cc/150?img=53",
       time: "Yesterday",
       text: "This is legit! Was skeptical at first but decided to try anyway. Got my Sainsbury's gift card in just 3 days after completing the survey. Amazing service!",
       likes: 47,
@@ -78,7 +78,7 @@ const CustomerReviews = () => {
     {
       id: 3,
       name: "Jessica Williams",
-      avatar: "https://i.pravatar.cc/40?img=8",
+      avatar: "https://i.pravatar.cc/150?img=45",
       time: "2 days ago",
       text: "Just wow! Survey took less than 5 minutes and the gift card arrived perfectly packaged. My weekly shop at Sainsbury's is sorted for a while!",
       likes: 19,
@@ -89,7 +89,7 @@ const CustomerReviews = () => {
     {
       id: 4,
       name: "Robert Chen",
-      avatar: "https://i.pravatar.cc/40?img=12",
+      avatar: "https://i.pravatar.cc/150?img=11",
       time: "3 days ago",
       text: "The whole process was surprisingly simple. I completed the survey during lunch break and received confirmation immediately. Gift card arrived few days later. 10/10 would recommend!",
       likes: 38,
@@ -99,7 +99,7 @@ const CustomerReviews = () => {
     {
       id: 5,
       name: "Amanda Rodriguez",
-      avatar: "https://i.pravatar.cc/40?img=22",
+      avatar: "https://i.pravatar.cc/150?img=25",
       time: "Last week",
       text: "Best decision ever! My Sainsbury's gift card arrived in perfect condition. The Sainsbury's Review Program is amazing - thank you so much!",
       likes: 57,
@@ -110,7 +110,7 @@ const CustomerReviews = () => {
     {
       id: 6,
       name: "Emma Peterson",
-      avatar: "https://i.pravatar.cc/40?img=3",
+      avatar: "https://i.pravatar.cc/150?img=9",
       time: "4 days ago",
       text: "Thought it was too good to be true, but I'm literally using my £100 Sainsbury's gift card today! Perfect timing as I needed to stock up on shopping.",
       likes: 21,
@@ -120,7 +120,7 @@ const CustomerReviews = () => {
     {
       id: 7,
       name: "Liam Johnson",
-      avatar: "https://i.pravatar.cc/40?img=10",
+      avatar: "https://i.pravatar.cc/150?img=67",
       time: "5 days ago",
       text: "So grateful for this opportunity! My family's shopping budget was tight this month. The survey was straightforward and my gift card came in the mail just 4 days later.",
       likes: 17,
@@ -131,7 +131,7 @@ const CustomerReviews = () => {
     {
       id: 8,
       name: "Olivia Rodriguez",
-      avatar: "https://i.pravatar.cc/40?img=16",
+      avatar: "https://i.pravatar.cc/150?img=47",
       time: "Last week",
       text: "My friends didn't believe me when I told them about this program, but now they're all signing up after seeing my Sainsbury's gift card! Definitely worth the few minutes it takes.",
       likes: 29,
@@ -141,7 +141,7 @@ const CustomerReviews = () => {
     {
       id: 9,
       name: "Noah Martinez",
-      avatar: "https://i.pravatar.cc/40?img=20",
+      avatar: "https://i.pravatar.cc/150?img=13",
       time: "Last week",
       text: "Just got my Sainsbury's gift card yesterday. Already used £20 of it for my shopping today. Such a helpful boost to the monthly budget!",
       likes: 15,
@@ -151,7 +151,7 @@ const CustomerReviews = () => {
     {
       id: 10,
       name: "Ava Thompson",
-      avatar: "https://i.pravatar.cc/40?img=23",
+      avatar: "https://i.pravatar.cc/150?img=23",
       time: "2 weeks ago",
       text: "After some unexpected bills, our shopping budget was tight. This Sainsbury's gift card program was a lifesaver! So quick and easy to participate.",
       likes: 33,
@@ -390,7 +390,6 @@ const CustomerReviews = () => {
                       src="/lovable-uploads/cbdedd35-0ec9-4e16-8866-51e309907ad3.png" 
                       alt="Sainsbury's Review Program" 
                       loading="eager" 
-                      fetchPriority="high"
                       width="28"
                       height="28" 
                     />
