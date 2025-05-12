@@ -50,3 +50,31 @@
   0% { transform: translateX(-100%) rotate(30deg); }
   100% { transform: translateX(100%) rotate(30deg); }
 }
+
+/* Green button animation */
+.bg-green-500.animate-pulse {
+  animation: green-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes green-pulse {
+  0%, 100% {
+    background-color: #22c55e; /* bg-green-500 */
+  }
+  50% {
+    background-color: #16a34a; /* bg-green-600 */
+  }
+}
+
+/* Blue button animation */
+.bg-blue-500.animate-pulse {
+  animation: blue-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes blue-pulse {
+  0%, 100% {
+    background-color: #3b82f6; /* bg-blue-500 */
+  }
+  50% {
+    background-color: #2563eb; /* bg-blue-600 */
+  }
+}

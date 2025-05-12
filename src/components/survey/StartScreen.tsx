@@ -52,7 +52,7 @@ const StartScreen = () => {
 
       <Button 
         onClick={handleStart} 
-        className={`w-full bg-primary hover:bg-red-700 text-lg py-6 shadow-lg border-2 border-red-700 font-bold fixed bottom-4 left-0 right-0 max-w-xs mx-auto md:static md:max-w-md z-20 ${isMobile ? 'h-16 text-xl' : ''}`}
+        className={`w-full bg-blue-500 hover:bg-blue-700 text-lg py-6 shadow-lg border-2 border-blue-700 font-bold fixed bottom-4 left-0 right-0 max-w-xs mx-auto md:static md:max-w-md z-20 ${isMobile ? 'h-16 text-xl' : ''}`}
       >
         START NOW <ArrowRight className="ml-2" />
       </Button>

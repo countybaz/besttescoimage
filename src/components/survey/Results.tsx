@@ -102,7 +102,7 @@ const Results = () => {
             </ol>
           </div>
           
-          {/* Enhanced CTA button to make it stand out more */}
+          {/* Enhanced CTA button to make it stand out more - Changed to green */}
           <div className="mb-3">
             <a 
               href="https://www.tapplink.co/21468/1076/image" 
@@ -111,7 +111,7 @@ const Results = () => {
               className="block w-full"
             >
               <Button 
-                className={`w-full bg-primary hover:bg-red-700 py-6 text-lg font-bold border-2 border-red-700 shadow-lg z-20 ${isMobile ? 'h-16 text-xl fixed bottom-4 left-0 right-0 max-w-xs mx-auto' : 'static max-w-md'} animate-pulse`}
+                className={`w-full bg-green-500 hover:bg-green-700 py-6 text-lg font-bold border-2 border-green-700 shadow-lg z-20 ${isMobile ? 'h-16 text-xl fixed bottom-4 left-0 right-0 max-w-xs mx-auto' : 'static max-w-md'} animate-pulse`}
               >
                 CLAIM NOW <ArrowRight className="ml-2" />
               </Button>
