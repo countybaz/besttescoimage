@@ -294,11 +294,11 @@ const CustomerReviews = () => {
     <div className="mt-8 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          {/* Updated to use the Tesco logo */}
+          {/* Updated to use the correct Tesco Review Program logo */}
           <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
             <img
-              src="/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png"
-              alt="Tesco Logo"
+              src="/lovable-uploads/8ed959d0-c178-4017-9a6f-7d5948e568fd.png"
+              alt="Tesco Review Program Logo"
               className="w-full h-full object-contain"
               loading="lazy"
             />
