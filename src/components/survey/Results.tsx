@@ -8,7 +8,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
-import Timer from "@/components/Timer";
 import { ArrowRight } from "lucide-react";
 
 // Define gift card image path
@@ -52,7 +51,7 @@ const Results = () => {
             className="mb-4"
           />
           
-          <Timer minutes={3} />
+          {/* Removed duplicate Timer component */}
           
           <div className="mb-4 space-y-3">
             {/* Sainsbury's Gift Card Image */}

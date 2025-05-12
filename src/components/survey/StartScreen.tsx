@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import SurveyHeader from "@/components/SurveyHeader";
 import { useSurvey } from "@/contexts/SurveyContext";
 import { ArrowRight } from "lucide-react";
-import FacebookReviews from "@/components/FacebookReviews";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const StartScreen = () => {
@@ -41,8 +40,7 @@ const StartScreen = () => {
         START NOW <ArrowRight className="ml-2" />
       </Button>
 
-      {/* Facebook Review Section - kept in the start screen */}
-      <FacebookReviews />
+      {/* Removed FacebookReviews section */}
 
       {/* Add some space at the bottom */}
       <div className="h-16 md:h-10"></div>

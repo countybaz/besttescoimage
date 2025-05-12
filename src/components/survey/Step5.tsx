@@ -19,26 +19,54 @@ const Step5 = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    // Handle progress animation
+    // Define timing for each check to appear
+    const savedCheckTime = 1500; // 1.5 seconds
+    const eligibleCheckTime = 4000; // 4 seconds
+    const rewardsCheckTime = 6500; // 6.5 seconds
+    const completionTime = 7500; // 7.5 seconds
+    
+    // Calculate progress percentages for each milestone
+    const savedProgressPercent = Math.floor((savedCheckTime / completionTime) * 100);
+    const eligibleProgressPercent = Math.floor((eligibleCheckTime / completionTime) * 100);
+    const rewardsProgressPercent = Math.floor((rewardsCheckTime / completionTime) * 100);
+    
+    // Handle progress animation with specific targets for each milestone
+    let currentProgress = 0;
     const progressInterval = setInterval(() => {
       setProgressValue(prev => {
-        if (prev >= 100) {
-          clearInterval(progressInterval);
-          return 100;
-        }
-        return prev + 1;
+        // Determine target based on which checks are visible
+        let target = 100;
+        if (!checks.saved) target = savedProgressPercent - 5;
+        else if (!checks.eligible) target = eligibleProgressPercent - 5;
+        else if (!checks.rewards) target = rewardsProgressPercent - 5;
+        
+        // Increment progress slightly
+        currentProgress = Math.min(prev + 1, target);
+        return currentProgress;
       });
     }, 50);
 
     // Handle check animations with each tick appearing only after the previous one
-    const savedTimer = setTimeout(() => setChecks(prev => ({ ...prev, saved: true })), 1500);
-    const eligibleTimer = setTimeout(() => setChecks(prev => ({ ...prev, eligible: true })), 4000);
-    const rewardsTimer = setTimeout(() => setChecks(prev => ({ ...prev, rewards: true })), 6500);
+    const savedTimer = setTimeout(() => {
+      setChecks(prev => ({ ...prev, saved: true }));
+      setProgressValue(savedProgressPercent);
+    }, savedCheckTime);
+    
+    const eligibleTimer = setTimeout(() => {
+      setChecks(prev => ({ ...prev, eligible: true }));
+      setProgressValue(eligibleProgressPercent);
+    }, eligibleCheckTime);
+    
+    const rewardsTimer = setTimeout(() => {
+      setChecks(prev => ({ ...prev, rewards: true }));
+      setProgressValue(rewardsProgressPercent);
+    }, rewardsCheckTime);
 
     // Set processing to false after all checks complete
     const completeTimer = setTimeout(() => {
       setIsProcessing(false);
-    }, 7500);
+      setProgressValue(100);
+    }, completionTime);
 
     // Auto-progress after a longer delay to ensure button is visible
     const autoProgress = setTimeout(() => {
@@ -68,8 +96,8 @@ const Step5 = () => {
             {checks.saved && <Check className="h-4 w-4" />}
           </div>
           <div>
-            <p className={`text-lg font-bold ${checks.saved ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Sending answers..</p>
-            <p className={`text-gray-600 ${checks.saved ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Securely transmitting your answers</p>
+            <p className={`text-lg font-bold transition-opacity duration-300 ${checks.saved ? 'opacity-100' : 'opacity-0'}`}>Sending answers..</p>
+            <p className={`text-gray-600 transition-opacity duration-300 ${checks.saved ? 'opacity-100' : 'opacity-0'}`}>Securely transmitting your answers</p>
           </div>
         </div>
         
@@ -78,8 +106,8 @@ const Step5 = () => {
             {checks.eligible && <Check className="h-4 w-4" />}
           </div>
           <div>
-            <p className={`text-lg font-bold ${checks.eligible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Verifying eligibility..</p>
-            <p className={`text-gray-600 ${checks.eligible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Checking your answers against our criteria</p>
+            <p className={`text-lg font-bold transition-opacity duration-300 ${checks.eligible ? 'opacity-100' : 'opacity-0'}`}>Verifying eligibility..</p>
+            <p className={`text-gray-600 transition-opacity duration-300 ${checks.eligible ? 'opacity-100' : 'opacity-0'}`}>Checking your answers against our criteria</p>
           </div>
         </div>
         
@@ -88,8 +116,8 @@ const Step5 = () => {
             {checks.rewards && <Check className="h-4 w-4" />}
           </div>
           <div>
-            <p className={`text-lg font-bold ${checks.rewards ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Almost there!</p>
-            <p className={`text-gray-600 ${checks.rewards ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>only 12 gift cards available</p>
+            <p className={`text-lg font-bold transition-opacity duration-300 ${checks.rewards ? 'opacity-100' : 'opacity-0'}`}>Almost there!</p>
+            <p className={`text-gray-600 transition-opacity duration-300 ${checks.rewards ? 'opacity-100' : 'opacity-0'}`}>only 12 gift cards available</p>
           </div>
         </div>
       </div>
