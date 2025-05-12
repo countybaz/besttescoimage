@@ -4,7 +4,6 @@ import { Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useIsMobile } from "@/hooks/use-mobile";
-import CustomerReviews from "@/components/CustomerReviews";
 
 interface ProductOfferProps {
   onClaim: () => void;
@@ -105,11 +104,6 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       <p className="text-xs text-center text-gray-500 mt-4">
         Limited quantity available. Offer valid while supplies last.
       </p>
-      
-      {/* Add CustomerReviews component */}
-      <div className="mt-8">
-        <CustomerReviews />
-      </div>
     </div>
   );
 };
