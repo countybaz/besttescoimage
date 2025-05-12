@@ -7,16 +7,25 @@ interface TimerProps {
 
 const Timer = ({ minutes }: TimerProps) => {
   const [timeLeft, setTimeLeft] = useState(() => {
-    // Try to get the saved timer value from sessionStorage
-    const savedTime = sessionStorage.getItem('timerValue');
-    if (savedTime) {
-      const parsedTime = parseInt(savedTime, 10);
-      // Validate the saved time to ensure it's sensible
-      if (!isNaN(parsedTime) && parsedTime > 0 && parsedTime <= minutes * 60) {
-        return parsedTime;
+    // Get the saved timer expiration timestamp
+    const expiryTimestamp = sessionStorage.getItem('timerExpiry');
+    
+    if (expiryTimestamp) {
+      // Calculate remaining time based on expiry timestamp
+      const currentTime = new Date().getTime();
+      const expiry = parseInt(expiryTimestamp, 10);
+      const remaining = Math.max(0, Math.floor((expiry - currentTime) / 1000));
+      
+      // If there's still time left, return it
+      if (remaining > 0 && remaining <= minutes * 60) {
+        return remaining;
       }
     }
-    return minutes * 60; // Default to full time if no valid saved time
+    
+    // If no valid time found, set a new expiration timestamp
+    const newExpiryTime = new Date().getTime() + (minutes * 60 * 1000);
+    sessionStorage.setItem('timerExpiry', newExpiryTime.toString());
+    return minutes * 60;
   });
 
   useEffect(() => {
@@ -25,14 +34,28 @@ const Timer = ({ minutes }: TimerProps) => {
     const timerId = setInterval(() => {
       setTimeLeft(prev => {
         const newValue = prev <= 1 ? 0 : prev - 1;
-        // Save the current timer value to sessionStorage
-        sessionStorage.setItem('timerValue', newValue.toString());
         return newValue;
       });
     }, 1000);
 
     return () => {
       clearInterval(timerId);
+    };
+  }, [timeLeft]);
+
+  // Save current timer state when component unmounts or on navigation
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      const currentTime = new Date().getTime();
+      const expiryTime = currentTime + (timeLeft * 1000);
+      sessionStorage.setItem('timerExpiry', expiryTime.toString());
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      handleBeforeUnload(); // Also save when component unmounts
     };
   }, [timeLeft]);
 
