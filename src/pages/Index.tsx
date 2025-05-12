@@ -62,24 +62,25 @@ const HeaderContent = () => {
   
   return (
     <div 
-      className="flex items-center justify-between w-full md:justify-center cursor-pointer" 
+      className="flex items-center justify-center w-full cursor-pointer" 
       onClick={handleLogoClick}
     >
-      <div className="flex items-center">
+      <div className="flex items-center justify-center">
         <img 
           src="/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png" 
           alt="Tesco Review Program Logo" 
-          className={`h-16 w-auto min-w-[60px] md:h-20 transition-all duration-200`}
+          className={`h-16 w-auto md:h-20 transition-all duration-200`}
           width="80" 
           height="80"
           loading="eager"
           fetchPriority="high"
+          decoding="async"
         />
-        <h1 className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-primary`}>
+        <h1 className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-primary ml-2`}>
           Tesco Review Program
         </h1>
       </div>
-      <div className="ml-2 md:ml-4">
+      <div className="ml-4">
         <FAQ />
       </div>
     </div>

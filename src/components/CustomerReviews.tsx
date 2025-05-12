@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Star, ThumbsUp, MessageCircle, ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -295,7 +294,7 @@ const CustomerReviews = () => {
     <div className="mt-8 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          {/* Updated to use the Tesco logo instead of a colored circle with T */}
+          {/* Updated to use the Tesco logo */}
           <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
             <img
               src="/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png"

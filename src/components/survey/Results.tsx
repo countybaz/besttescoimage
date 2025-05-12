@@ -64,31 +64,33 @@ const Results = () => {
                       alt="Tesco Gift Card" 
                       className="rounded-md object-contain w-full h-full" 
                       loading="eager"
+                      fetchPriority="high"
                       width="280"
                       height="158"
+                      decoding="async"
                     />
                   )}
                 </AspectRatio>
               </div>
             </div>
             
-            {/* Enhanced promotional text with better styling */}
-            <div className="text-center px-4 py-3 bg-red-50 rounded-lg border border-red-100 shadow-sm">
+            {/* Enhanced promotional text with better styling for Limited Time Offer */}
+            <div className="text-center px-4 py-5 bg-gradient-to-r from-red-100 to-red-50 rounded-lg border border-red-200 shadow-md">
               <p className="text-primary font-medium">
                 Share your thoughts and get rewarded!
               </p>
-              <p className="text-primary font-bold text-base mt-1">
+              <p className="text-primary font-bold text-lg mt-1">
                 Claim your Tesco gift card today!
               </p>
-              <div className="mt-2 inline-block bg-white px-3 py-1 rounded-full text-xs text-red-600 font-semibold border border-red-200">
-                Limited Time Offer
+              <div className="mt-3 inline-block bg-white px-4 py-1.5 rounded-full text-sm text-red-600 font-semibold border-2 border-red-300 shadow-sm animate-pulse">
+                ⏰ LIMITED TIME OFFER ⏰
               </div>
             </div>
           </div>
           
           {/* Process Steps with improved styling */}
-          <div className="my-4 bg-gray-50 p-4 rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="text-sm font-medium text-gray-700 mb-2 flex items-center">
+          <div className="my-4 bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+            <h3 className="text-sm font-medium text-gray-700 mb-3 flex items-center">
               <span className="bg-primary text-white rounded-full w-5 h-5 inline-flex items-center justify-center text-xs mr-2">?</span>
               How it works:
             </h3>
@@ -100,7 +102,7 @@ const Results = () => {
             </ol>
           </div>
           
-          {/* Fixed CTA button for mobile with updated URL */}
+          {/* Updated CTA button for mobile with improved URL */}
           <div>
             <a 
               href="https://www.tapplink.co/21468/1076/image" 

@@ -25,7 +25,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
     // Set a shorter timeout for faster initial render
     const timeout = setTimeout(() => {
       setImageLoaded(true);
-    }, 500); 
+    }, 300); 
     
     return () => clearTimeout(timeout);
   }, []);
@@ -84,8 +84,11 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
         </ol>
       </div>
 
+      {/* Enhanced Limited Time Offer */}
       <div className="mb-6 text-center">
-        <p className="text-primary font-medium text-sm mt-1">Limited Time Offer</p>
+        <p className="inline-block bg-red-50 border-2 border-red-200 rounded-full px-4 py-1 text-red-600 font-semibold text-sm animate-pulse">
+          ⏰ LIMITED TIME OFFER ⏰
+        </p>
       </div>
 
       <a 

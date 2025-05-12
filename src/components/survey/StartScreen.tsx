@@ -29,9 +29,12 @@ const StartScreen = () => {
           Ready to earn rewards for your feedback? Click on the <span className="text-primary font-semibold">Start</span> button below.
         </p>
         
-        <p className="text-sm text-red-600 text-center font-medium mb-6">
-          As soon as you click the button, a timer starts and you have 3 minutes to complete the process.
-        </p>
+        {/* Enhanced Limited Time Offer styling */}
+        <div className="text-center px-4 py-3 bg-gradient-to-r from-red-100 to-red-50 rounded-lg border-2 border-red-200 mb-4">
+          <p className="text-sm text-red-600 font-medium animate-pulse">
+            ⏰ LIMITED TIME OFFER: You have 3 minutes to complete the process after clicking the button ⏰
+          </p>
+        </div>
       </div>
 
       <Button 
