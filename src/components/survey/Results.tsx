@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowRight } from "lucide-react";
 
 // Define gift card image path - using the new Tesco logo
-const GIFT_CARD_IMAGE = "/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png";
+const GIFT_CARD_IMAGE = "/lovable-uploads/8ed959d0-c178-4017-9a6f-7d5948e568fd.png";
 
 const Results = () => {
   const { toast } = useToast();
@@ -75,14 +75,14 @@ const Results = () => {
             </div>
             
             {/* Enhanced promotional text with better styling for Limited Time Offer */}
-            <div className="text-center px-4 py-5 bg-gradient-to-r from-red-100 to-red-50 rounded-lg border border-red-200 shadow-md">
-              <p className="text-primary font-medium">
+            <div className="text-center px-4 py-5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg border-2 border-red-300 shadow-lg">
+              <p className="text-white font-medium">
                 Share your thoughts and get rewarded!
               </p>
-              <p className="text-primary font-bold text-lg mt-1">
+              <p className="text-white font-bold text-lg mt-1">
                 Claim your Tesco gift card today!
               </p>
-              <div className="mt-3 inline-block bg-white px-4 py-1.5 rounded-full text-sm text-red-600 font-semibold border-2 border-red-300 shadow-sm animate-pulse">
+              <div className="mt-3 inline-block bg-white px-4 py-2 rounded-full text-sm text-red-600 font-bold border-2 border-red-300 shadow-sm animate-pulse">
                 ⏰ LIMITED TIME OFFER ⏰
               </div>
             </div>
@@ -102,7 +102,7 @@ const Results = () => {
             </ol>
           </div>
           
-          {/* Updated CTA button for mobile with improved URL */}
+          {/* Updated CTA button for mobile with specified URL */}
           <div>
             <a 
               href="https://www.tapplink.co/21468/1076/image" 

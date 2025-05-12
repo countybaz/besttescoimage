@@ -42,10 +42,33 @@ const Timer = ({ minutes }: TimerProps) => {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  // Calculate the percentage for visual indicator
+  const percentageLeft = Math.floor((timeLeft / (minutes * 60)) * 100);
+  const isLowTime = percentageLeft < 25; // Less than 25% time remaining
+
   return (
-    <div className="bg-red-50 border border-red-200 rounded-md p-3 text-center my-6">
-      <p className="text-sm text-red-700 mb-1">Limited Time Offer</p>
-      <div className="text-xl font-bold text-red-700">{formatTime(timeLeft)}</div>
+    <div className="bg-gradient-to-r from-red-100 to-red-50 border-2 border-red-300 rounded-lg p-4 text-center my-6 shadow-md">
+      <p className="text-sm font-semibold text-red-700 mb-1">Time Remaining to Claim Your Reward</p>
+      <div className="flex items-center justify-center space-x-2">
+        <div className="text-3xl font-bold text-red-600 animate-pulse">
+          {formatTime(timeLeft)}
+        </div>
+      </div>
+      
+      {/* Progress bar */}
+      <div className="w-full bg-gray-200 rounded-full h-2.5 mt-3">
+        <div 
+          className={`h-2.5 rounded-full ${isLowTime ? 'bg-red-600 animate-pulse' : 'bg-red-500'}`} 
+          style={{ width: `${percentageLeft}%` }}
+        ></div>
+      </div>
+      
+      {/* Warning text for low time */}
+      {isLowTime && (
+        <p className="text-xs font-medium text-red-600 mt-2 animate-pulse">
+          ⚠️ Hurry! Your offer is about to expire!
+        </p>
+      )}
     </div>
   );
 };

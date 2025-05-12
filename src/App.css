@@ -5,7 +5,7 @@
 }
 
 .animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
@@ -15,4 +15,15 @@
   50% {
     opacity: .5;
   }
+}
+
+/* Enhanced animations for important elements */
+.limited-time {
+  animation: attention-pulse 2s infinite;
+}
+
+@keyframes attention-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }

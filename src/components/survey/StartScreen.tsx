@@ -21,6 +21,16 @@ const StartScreen = () => {
       />
       
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
+        <div className="flex justify-center mb-4">
+          <img 
+            src="/lovable-uploads/8ed959d0-c178-4017-9a6f-7d5948e568fd.png" 
+            alt="Tesco Review Program" 
+            className="h-24 w-auto" 
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+        
         <p className="text-center text-lg mb-4">
           Get a <span className="text-primary font-semibold">Tesco gift card</span> with the Tesco Review Program. Simply answer 3 short questions about your shopping habits and this fantastic chance is yours!
         </p>
@@ -30,9 +40,12 @@ const StartScreen = () => {
         </p>
         
         {/* Enhanced Limited Time Offer styling */}
-        <div className="text-center px-4 py-3 bg-gradient-to-r from-red-100 to-red-50 rounded-lg border-2 border-red-200 mb-4">
-          <p className="text-sm text-red-600 font-medium animate-pulse">
-            ⏰ LIMITED TIME OFFER: You have 3 minutes to complete the process after clicking the button ⏰
+        <div className="text-center px-4 py-4 bg-gradient-to-r from-red-600 to-red-500 rounded-lg border-2 border-red-300 mb-4 shadow-lg">
+          <p className="text-base text-white font-semibold animate-pulse">
+            ⏰ LIMITED TIME OFFER ⏰
+          </p>
+          <p className="text-sm text-white mt-1">
+            You have 3 minutes to complete the process after clicking the button
           </p>
         </div>
       </div>
