@@ -10,7 +10,7 @@ interface ProductOfferProps {
 }
 
 // Define new gift card image
-const GIFT_CARD_IMAGE = "/lovable-uploads/839b2b6b-4f09-4750-89f8-350ec4750a50.png";
+const GIFT_CARD_IMAGE = "/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png";
 
 const ProductOffer = ({ onClaim }: ProductOfferProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -44,7 +44,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
           ) : null}
           <img 
             src={GIFT_CARD_IMAGE}
-            alt="Sainsbury's Gift Card" 
+            alt="Tesco Gift Card" 
             className={`w-full h-48 object-contain rounded-md ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             style={{ transition: 'opacity 0.1s' }}
             width="300"
@@ -58,10 +58,10 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       </div>
 
       <div className="mb-6">
-        <h4 className="font-bold text-lg mb-2">£100 Sainsbury's Gift Card</h4>
+        <h4 className="font-bold text-lg mb-2">Tesco Gift Card</h4>
         <div className="flex items-center mb-1">
           <Check className="h-4 w-4 text-green-500 mr-2" />
-          <span className="text-gray-700">Valid in all Sainsbury's stores</span>
+          <span className="text-gray-700">Valid in all Tesco stores</span>
         </div>
         <div className="flex items-center mb-1">
           <Check className="h-4 w-4 text-green-500 mr-2" />
@@ -77,7 +77,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       <div className="my-4 bg-gray-50 p-3 rounded-lg border border-gray-200">
         <h3 className="text-sm font-medium text-gray-700 mb-2">How it works:</h3>
         <ol className="text-xs text-gray-600 space-y-2 pl-5 list-decimal">
-          <li><span className="font-medium">Confirm your delivery details:</span> Confirm where the exclusive Sainsbury's gift card should be delivered. Answer our sponsored questions and provide your delivery address.</li>
+          <li><span className="font-medium">Confirm your delivery details:</span> Confirm where the exclusive Tesco gift card should be delivered. Answer our sponsored questions and provide your delivery address.</li>
           <li><span className="font-medium">Unlock your DOUBLE reward:</span> Complete our sponsored deals. Each deal that you complete will increase your reward.</li>
           <li><span className="font-medium">Prepare for the reveal:</span> Your gift card will be delivered to your home. Delivery is guaranteed within 5 days after the completion of the process.</li>
           <li><span className="font-medium">Don't forget</span> to confirm your participation by email.</li>
@@ -85,7 +85,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       </div>
 
       <div className="mb-6 text-center">
-        <p className="text-orange-600 font-medium text-sm mt-1">Limited Time Offer</p>
+        <p className="text-primary font-medium text-sm mt-1">Limited Time Offer</p>
       </div>
 
       <a 
@@ -95,7 +95,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
         className="block w-full"
       >
         <Button 
-          className={`w-full py-6 text-lg bg-orange-600 hover:bg-orange-700 shadow-md fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md md:mt-6 border-2 border-orange-700 ${isMobile ? 'h-16 text-xl' : ''}`}
+          className={`w-full py-6 text-lg bg-primary hover:bg-red-700 shadow-md fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md md:mt-6 border-2 border-red-700 ${isMobile ? 'h-16 text-xl' : ''}`}
         >
           CLAIM NOW <ArrowRight className="ml-2" />
         </Button>

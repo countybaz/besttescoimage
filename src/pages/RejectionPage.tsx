@@ -12,7 +12,7 @@ const RejectionPage = () => {
   useEffect(() => {
     const img = new Image();
     img.onload = () => setLogoLoaded(true);
-    img.src = "/lovable-uploads/cbdedd35-0ec9-4e16-8866-51e309907ad3.png";
+    img.src = "/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png";
   }, []);
   
   const handleTryAgain = () => {
@@ -21,12 +21,12 @@ const RejectionPage = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-orange-100">
+    <div className="min-h-screen bg-gradient-to-b from-red-50 to-red-100">
       <header className="shadow-sm py-2 bg-white h-24 flex items-center">
         <div className="container mx-auto px-4 flex items-center justify-center">
           <img 
-            src="/lovable-uploads/cbdedd35-0ec9-4e16-8866-51e309907ad3.png" 
-            alt="Sainsbury's Review Program Logo" 
+            src="/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png" 
+            alt="Tesco Review Program Logo" 
             className={`h-20 md:h-24 mr-4 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
             style={{ transition: 'opacity 0.3s' }}
             loading="eager"
@@ -35,7 +35,7 @@ const RejectionPage = () => {
             width="100"
             height="100"
           />
-          <h1 className="text-xl font-bold text-orange-600">Sainsbury's Review Program</h1>
+          <h1 className="text-xl font-bold text-primary">Tesco Review Program</h1>
         </div>
       </header>
       
@@ -56,7 +56,7 @@ const RejectionPage = () => {
 
           <Button 
             onClick={handleTryAgain} 
-            className="w-full bg-orange-600 hover:bg-orange-700 text-lg py-6"
+            className="w-full bg-primary hover:bg-red-700 text-lg py-6"
           >
             Try Again <RefreshCw className="ml-2" size={20} />
           </Button>
@@ -69,9 +69,9 @@ const RejectionPage = () => {
           <div className="mb-6">
             <h3 className="font-semibold mb-3 text-gray-800 bg-gray-100 inline-block px-4 py-2 rounded-md">Legal Links</h3>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link to="/terms" className="text-orange-600 hover:underline">Terms and Conditions</Link>
-              <Link to="/privacy" className="text-orange-600 hover:underline">Privacy Policy</Link>
-              <Link to="/non-affiliation" className="text-orange-600 hover:underline">Non-Affiliation Disclaimer</Link>
+              <Link to="/terms" className="text-primary hover:underline">Terms and Conditions</Link>
+              <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
+              <Link to="/non-affiliation" className="text-primary hover:underline">Non-Affiliation Disclaimer</Link>
             </div>
           </div>
           
@@ -84,7 +84,7 @@ const RejectionPage = () => {
           
           {/* Copyright */}
           <p className="text-xs text-center text-gray-500 mt-6">
-            © {new Date().getFullYear()} Sainsbury's Review Program. All rights reserved.
+            © {new Date().getFullYear()} Tesco Review Program. All rights reserved.
             <br />
             This is a limited time promotional offer. Terms and conditions apply.
           </p>

@@ -27,7 +27,7 @@ const Step3 = () => {
       />
       
       <div className="mb-6">
-        <h2 className="text-lg font-medium mb-4">What would you like to review about Sainsbury's?</h2>
+        <h2 className="text-lg font-medium mb-4">What would you like to review about Tesco?</h2>
         <div className="space-y-3">
           <SurveyOption 
             label="Shopping experience" 
@@ -50,7 +50,7 @@ const Step3 = () => {
       <Button 
         onClick={handleNext} 
         disabled={!selected}
-        className={`w-full py-6 text-lg bg-orange-600 hover:bg-orange-700 shadow-lg border-2 border-orange-700 font-bold fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md ${isMobile ? 'h-16 text-xl' : ''}`}
+        className={`w-full py-6 text-lg bg-primary hover:bg-red-700 shadow-lg border-2 border-red-700 font-bold fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md ${isMobile ? 'h-16 text-xl' : ''}`}
       >
         Continue <ArrowRight className="ml-1" />
       </Button>

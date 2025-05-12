@@ -17,13 +17,13 @@ const SurveyOption = ({ label, selected, onClick, className }: SurveyOptionProps
       variant={selected ? "default" : "outline"}
       className={cn(
         "w-full p-4 h-auto justify-between text-left flex items-center gap-4 transition-all",
-        selected ? "border-2 border-blue-500 bg-blue-50 text-blue-800" : "border border-gray-200",
+        selected ? "border-2 border-primary bg-red-50 text-red-800" : "border border-gray-200",
         className
       )}
       onClick={onClick}
     >
       <span className="font-medium text-base">{label}</span>
-      {selected && <Check className="h-5 w-5 text-blue-500" />}
+      {selected && <Check className="h-5 w-5 text-primary" />}
     </Button>
   );
 };

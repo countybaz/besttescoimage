@@ -116,7 +116,9 @@ const Step5 = () => {
           <span className="text-sm font-medium text-gray-600">Processing</span>
           <span className="text-sm font-medium">{progressValue}%</span>
         </div>
-        <Progress value={progressValue} className="h-2" />
+        <Progress value={progressValue} className="h-2 bg-gray-200">
+          <div className="h-full bg-primary" style={{ width: `${progressValue}%` }}></div>
+        </Progress>
       </div>
       
       <p className="text-center text-sm text-gray-500 mt-2 mb-6">

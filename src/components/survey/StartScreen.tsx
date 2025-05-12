@@ -17,16 +17,16 @@ const StartScreen = () => {
   return (
     <div className="max-w-md mx-auto pb-20 md:pb-0">
       <SurveyHeader 
-        title="Great news! You are among the first to join our Sainsbury's Review Program!"
+        title="Great news! You are among the first to join our Tesco Review Program!"
       />
       
       <div className="bg-white p-6 rounded-lg shadow-md mb-6">
         <p className="text-center text-lg mb-4">
-          Get a <span className="text-orange-600 font-semibold">£100 Sainsbury's gift card</span> with the Sainsbury's Review Program. Simply answer 3 short questions about your shopping habits and this fantastic chance is yours!
+          Get a <span className="text-primary font-semibold">Tesco gift card</span> with the Tesco Review Program. Simply answer 3 short questions about your shopping habits and this fantastic chance is yours!
         </p>
         
         <p className="text-center mb-6">
-          Ready to earn rewards for your feedback? Click on the <span className="text-orange-600 font-semibold">Start</span> button below.
+          Ready to earn rewards for your feedback? Click on the <span className="text-primary font-semibold">Start</span> button below.
         </p>
         
         <p className="text-sm text-red-600 text-center font-medium mb-6">
@@ -36,7 +36,7 @@ const StartScreen = () => {
 
       <Button 
         onClick={handleStart} 
-        className={`w-full bg-orange-600 hover:bg-orange-700 text-lg py-6 shadow-lg border-2 border-orange-700 font-bold fixed bottom-4 left-0 right-0 max-w-xs mx-auto md:static md:max-w-md z-20 ${isMobile ? 'h-16 text-xl' : ''}`}
+        className={`w-full bg-primary hover:bg-red-700 text-lg py-6 shadow-lg border-2 border-red-700 font-bold fixed bottom-4 left-0 right-0 max-w-xs mx-auto md:static md:max-w-md z-20 ${isMobile ? 'h-16 text-xl' : ''}`}
       >
         START NOW <ArrowRight className="ml-2" />
       </Button>
