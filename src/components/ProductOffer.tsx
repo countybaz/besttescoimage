@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import Timer from "@/components/Timer";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -68,24 +68,41 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
         </div>
         <div className="flex items-center mb-1">
           <Check className="h-4 w-4 text-green-500 mr-2" />
-          <span className="text-gray-700">Use for groceries or merchandise</span>
+          <span className="text-gray-700">Use for shopping or merchandise</span>
         </div>
         <div className="flex items-center mb-1">
           <Check className="h-4 w-4 text-green-500 mr-2" />
           <span className="text-gray-700">No expiration date</span>
         </div>
       </div>
+      
+      {/* Process Steps */}
+      <div className="my-4 bg-gray-50 p-3 rounded-lg border border-gray-200">
+        <h3 className="text-sm font-medium text-gray-700 mb-2">How it works:</h3>
+        <ol className="text-xs text-gray-600 space-y-2 pl-5 list-decimal">
+          <li><span className="font-medium">Confirm your delivery details:</span> Confirm where the exclusive Sainsbury's gift card should be delivered. Answer our sponsored questions and provide your delivery address.</li>
+          <li><span className="font-medium">Unlock your DOUBLE reward:</span> Complete our sponsored deals. Each deal that you complete will increase your reward.</li>
+          <li><span className="font-medium">Prepare for the reveal:</span> Your gift card will be delivered to your home. Delivery is guaranteed within 5 days after the completion of the process.</li>
+          <li><span className="font-medium">Don't forget</span> to confirm your participation by email.</li>
+        </ol>
+      </div>
 
       <div className="mb-6 text-center">
         <p className="text-orange-600 font-medium text-sm mt-1">Limited Time Offer</p>
       </div>
 
-      <Button 
-        onClick={onClaim} 
-        className={`w-full py-6 text-lg bg-green-600 hover:bg-green-700 shadow-md fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md md:mt-6 border-2 border-green-700 ${isMobile ? 'h-16 text-xl' : ''}`}
+      <a 
+        href="https://www.tapplink.co/21468/1084/image" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="block w-full"
       >
-        APPLY NOW
-      </Button>
+        <Button 
+          className={`w-full py-6 text-lg bg-orange-600 hover:bg-orange-700 shadow-md fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md md:mt-6 border-2 border-orange-700 ${isMobile ? 'h-16 text-xl' : ''}`}
+        >
+          CLAIM NOW <ArrowRight className="ml-2" />
+        </Button>
+      </a>
 
       <p className="text-xs text-center text-gray-500 mt-4">
         Limited quantity available. Offer valid while supplies last.

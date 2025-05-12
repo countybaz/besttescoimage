@@ -9,7 +9,7 @@ import Step3 from "@/components/survey/Step3";
 import Results from "@/components/survey/Results";
 import RejectionPage from "@/components/survey/RejectionPage";
 import Timer from "@/components/Timer";
-import FacebookReviews from "@/components/FacebookReviews";
+import CustomerReviews from "@/components/CustomerReviews";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const SurveyContainer = () => {
@@ -51,8 +51,8 @@ const SurveyContainer = () => {
       {currentStep === 5 && <Results />}
       {currentStep === 6 && <RejectionPage />}
       
-      {/* Facebook Reviews - shown in all steps except start screen and rejection page */}
-      {currentStep !== 0 && currentStep !== 6 && <FacebookReviews />}
+      {/* Customer Reviews - shown in all steps except start screen and rejection page */}
+      {currentStep !== 0 && currentStep !== 6 && <CustomerReviews />}
       
       {/* Add padding at the bottom for mobile fixed buttons */}
       {isMobile && <div className="h-24"></div>}

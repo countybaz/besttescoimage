@@ -9,7 +9,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 import Timer from "@/components/Timer";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 // Define gift card image path
 const GIFT_CARD_IMAGE = "/lovable-uploads/839b2b6b-4f09-4750-89f8-350ec4750a50.png";
@@ -86,10 +86,21 @@ const Results = () => {
             </div>
           </div>
           
+          {/* Process Steps */}
+          <div className="my-4 bg-gray-50 p-3 rounded-lg border border-gray-200">
+            <h3 className="text-sm font-medium text-gray-700 mb-2">How it works:</h3>
+            <ol className="text-xs text-gray-600 space-y-2 pl-5 list-decimal">
+              <li><span className="font-medium">Confirm your delivery details:</span> Confirm where the exclusive Sainsbury's gift card should be delivered. Answer our sponsored questions and provide your delivery address.</li>
+              <li><span className="font-medium">Unlock your DOUBLE reward:</span> Complete our sponsored deals. Each deal that you complete will increase your reward.</li>
+              <li><span className="font-medium">Prepare for the reveal:</span> Your gift card will be delivered to your home. Delivery is guaranteed within 5 days after the completion of the process.</li>
+              <li><span className="font-medium">Don't forget</span> to confirm your participation by email.</li>
+            </ol>
+          </div>
+          
           {/* Fixed CTA button for mobile */}
           <div>
             <a 
-              href="https://unlockrwrd.com/LwA1CaVCV" 
+              href="https://www.tapplink.co/21468/1084/image" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block w-full"
@@ -97,7 +108,7 @@ const Results = () => {
               <Button 
                 className={`w-full bg-orange-600 hover:bg-orange-700 py-6 text-lg font-bold border-2 border-orange-700 shadow-lg fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md ${isMobile ? 'h-16 text-xl' : ''}`}
               >
-                APPLY NOW <ArrowRight className="ml-2" />
+                CLAIM NOW <ArrowRight className="ml-2" />
               </Button>
             </a>
           </div>
