@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Star, ThumbsUp, MessageCircle, ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -402,7 +403,7 @@ const CustomerReviews = () => {
                     <span className="text-[10px] bg-red-100 text-red-800 px-1 rounded">Official</span>
                   </div>
                   <p className="text-xs mt-1">
-                    {getUniqueResponse(index, reviewName.split(" ")[0])}
+                    {getUniqueResponse(index, review.name.split(" ")[0])}
                   </p>
                   <div className="flex items-center mt-1 text-[10px] text-gray-500">
                     <span className="mr-2">{getRandomTime(index)}</span>
