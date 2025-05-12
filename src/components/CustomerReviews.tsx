@@ -27,10 +27,10 @@ const FALLBACK_IMAGE = "/lovable-uploads/cbdedd35-0ec9-4e16-8866-51e309907ad3.pn
 
 // Define Sainsbury's shopping images
 const SHOPPING_IMAGES = [
-  "/lovable-uploads/8c90f432-da05-45a1-81f7-cdbbce1ef2e2.png",
-  "/lovable-uploads/e8ded452-0d3c-44c9-8312-b92eea2579ef.png",
-  "/lovable-uploads/b58d9fe6-a7c6-416a-9594-20451eb86002.png",
-  "/lovable-uploads/b96a5830-12f3-497d-966a-b0930df4e6d0.png",
+  "/lovable-uploads/d59cc69b-167d-4c3f-b091-d5c8e7e5a1c3.png", // New image 1
+  "/lovable-uploads/2e38d133-c418-4f1c-9bcb-6dec4dc70324.png", // New image 2
+  "/lovable-uploads/f9004bc0-8125-45a8-91f8-6c795675e7a1.png", // New image 3
+  "/lovable-uploads/6e54a355-429f-42b6-8f03-69ee9f9400f9.png", // New image 4
 ];
 
 const CustomerReviews = () => {

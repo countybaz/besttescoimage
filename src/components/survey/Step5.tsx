@@ -30,26 +30,26 @@ const Step5 = () => {
       });
     }, 50);
 
-    // Handle check animations with the text appearing
-    const timers = [
-      setTimeout(() => setChecks(prev => ({ ...prev, saved: true })), 1000),
-      setTimeout(() => setChecks(prev => ({ ...prev, eligible: true })), 3000),
-      setTimeout(() => setChecks(prev => ({ ...prev, rewards: true })), 5000)
-    ];
+    // Handle check animations with each tick appearing only after the previous one
+    const savedTimer = setTimeout(() => setChecks(prev => ({ ...prev, saved: true })), 1500);
+    const eligibleTimer = setTimeout(() => setChecks(prev => ({ ...prev, eligible: true })), 4000);
+    const rewardsTimer = setTimeout(() => setChecks(prev => ({ ...prev, rewards: true })), 6500);
 
     // Set processing to false after all checks complete
     const completeTimer = setTimeout(() => {
       setIsProcessing(false);
-    }, 6000);
+    }, 7500);
 
     // Auto-progress after a longer delay to ensure button is visible
     const autoProgress = setTimeout(() => {
       goToNextStep();
-    }, 8000);
+    }, 9500);
 
     return () => {
       clearInterval(progressInterval);
-      timers.forEach(timer => clearTimeout(timer));
+      clearTimeout(savedTimer);
+      clearTimeout(eligibleTimer);
+      clearTimeout(rewardsTimer);
       clearTimeout(completeTimer);
       clearTimeout(autoProgress);
     };
