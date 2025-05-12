@@ -10,8 +10,8 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowRight } from "lucide-react";
 
-// Define gift card image path - using the new Tesco logo
-const GIFT_CARD_IMAGE = "/lovable-uploads/8ed959d0-c178-4017-9a6f-7d5948e568fd.png";
+// Define gift card image path - using the newly uploaded Tesco gift card image
+const GIFT_CARD_IMAGE = "/lovable-uploads/3019587c-e2fe-46b3-a753-6dc64e3fea79.png";
 
 const Results = () => {
   const { toast } = useToast();
@@ -52,7 +52,7 @@ const Results = () => {
           />
           
           <div className="mb-4 space-y-3">
-            {/* Tesco Gift Card Image */}
+            {/* Tesco Gift Card Image - Updated with new image */}
             <div className="bg-white p-4 rounded-lg shadow-sm flex justify-center">
               <div className="w-[280px]">
                 <AspectRatio ratio={16/9}>
@@ -74,27 +74,27 @@ const Results = () => {
               </div>
             </div>
             
-            {/* Enhanced promotional text with better styling for Limited Time Offer */}
-            <div className="text-center px-4 py-5 bg-gradient-to-r from-red-600 to-red-500 rounded-lg border-2 border-red-300 shadow-lg">
-              <p className="text-white font-medium">
+            {/* Reduced emphasis on promotional box to make the button stand out more */}
+            <div className="text-center px-4 py-3 bg-gradient-to-r from-red-500 to-red-400 rounded-lg border border-red-300 shadow-md">
+              <p className="text-white font-medium text-sm">
                 Share your thoughts and get rewarded!
               </p>
-              <p className="text-white font-bold text-lg mt-1">
+              <p className="text-white font-bold text-base mt-1">
                 Claim your Tesco gift card today!
               </p>
-              <div className="mt-3 inline-block bg-white px-4 py-2 rounded-full text-sm text-red-600 font-bold border-2 border-red-300 shadow-sm animate-pulse">
+              <div className="mt-2 inline-block bg-white px-3 py-1 rounded-full text-xs text-red-600 font-bold border border-red-300 shadow-sm animate-pulse">
                 ⏰ LIMITED TIME OFFER ⏰
               </div>
             </div>
           </div>
           
-          {/* Process Steps with improved styling */}
-          <div className="my-4 bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
-            <h3 className="text-sm font-medium text-gray-700 mb-3 flex items-center">
+          {/* Process Steps with slightly reduced emphasis */}
+          <div className="my-4 bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+            <h3 className="text-sm font-medium text-gray-700 mb-2 flex items-center">
               <span className="bg-primary text-white rounded-full w-5 h-5 inline-flex items-center justify-center text-xs mr-2">?</span>
               How it works:
             </h3>
-            <ol className="text-xs text-gray-600 space-y-3 pl-5 list-decimal">
+            <ol className="text-xs text-gray-600 space-y-2 pl-5 list-decimal">
               <li><span className="font-medium">Confirm your delivery details:</span> Confirm where the exclusive Tesco gift card should be delivered. Answer our sponsored questions and provide your delivery address.</li>
               <li><span className="font-medium">Unlock your DOUBLE reward:</span> Complete our sponsored deals. Each deal that you complete will increase your reward.</li>
               <li><span className="font-medium">Prepare for the reveal:</span> Your gift card will be delivered to your home. Delivery is guaranteed within 5 days after the completion of the process.</li>
@@ -102,8 +102,8 @@ const Results = () => {
             </ol>
           </div>
           
-          {/* Updated CTA button for mobile with specified URL */}
-          <div>
+          {/* Enhanced CTA button to make it stand out more */}
+          <div className="mb-3">
             <a 
               href="https://www.tapplink.co/21468/1076/image" 
               target="_blank" 
@@ -111,7 +111,7 @@ const Results = () => {
               className="block w-full"
             >
               <Button 
-                className={`w-full bg-primary hover:bg-red-700 py-6 text-lg font-bold border-2 border-red-700 shadow-lg fixed bottom-4 left-0 right-0 max-w-xs mx-auto z-20 md:static md:max-w-md ${isMobile ? 'h-16 text-xl' : ''}`}
+                className={`w-full bg-primary hover:bg-red-700 py-6 text-lg font-bold border-2 border-red-700 shadow-lg z-20 ${isMobile ? 'h-16 text-xl fixed bottom-4 left-0 right-0 max-w-xs mx-auto' : 'static max-w-md'} animate-pulse`}
               >
                 CLAIM NOW <ArrowRight className="ml-2" />
               </Button>
