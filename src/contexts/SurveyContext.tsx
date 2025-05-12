@@ -28,7 +28,7 @@ interface SurveyProviderProps {
 export const SurveyProvider = ({ children }: SurveyProviderProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
-  const totalSteps = 4;
+  const totalSteps = 6;  // Updated to include Step5
 
   const goToNextStep = () => {
     setCurrentStep((prev) => Math.min(prev + 1, totalSteps + 1));
