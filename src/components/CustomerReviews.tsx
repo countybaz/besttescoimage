@@ -23,14 +23,14 @@ type Review = {
 type SortOption = "newest" | "most-likes" | "highest-rating";
 
 // Define fallback image to use when image loading fails
-const FALLBACK_IMAGE = "/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png";
+const FALLBACK_IMAGE = "/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png";
 
-// Define Tesco shopping images
+// Define Tesco shopping images (using the new uploaded images)
 const SHOPPING_IMAGES = [
-  "/lovable-uploads/d59cc69b-167d-4c3f-b091-d5c8e7e5a1c3.png", // New image 1
-  "/lovable-uploads/2e38d133-c418-4f1c-9bcb-6dec4dc70324.png", // New image 2
-  "/lovable-uploads/f9004bc0-8125-45a8-91f8-6c795675e7a1.png", // New image 3
-  "/lovable-uploads/6e54a355-429f-42b6-8f03-69ee9f9400f9.png", // New image 4
+  "/lovable-uploads/052677da-b830-4042-ad1f-3f866075eee5.png", // New image 1
+  "/lovable-uploads/9e0c9d42-1052-40a3-a815-439e06e7236c.png", // New image 2
+  "/lovable-uploads/2877b40b-2f46-453f-9e71-98fa08cddbc0.png", // New image 3
+  "/lovable-uploads/a82de4e1-523a-4d77-970c-b9677894bea2.png", // New image 4
 ];
 
 const CustomerReviews = () => {
@@ -295,8 +295,14 @@ const CustomerReviews = () => {
     <div className="mt-8 bg-white rounded-lg shadow-md p-4">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-            <span className="text-white font-bold">T</span>
+          {/* Updated to use the Tesco logo instead of a colored circle with T */}
+          <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center">
+            <img
+              src="/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png"
+              alt="Tesco Logo"
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
           </div>
           <span className="ml-2 font-semibold text-primary">Customer Reviews</span>
         </div>
@@ -387,7 +393,7 @@ const CustomerReviews = () => {
                 <div className="relative mr-2">
                   <Avatar className="w-7 h-7">
                     <AvatarImage 
-                      src="/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png" 
+                      src="/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png" 
                       alt="Tesco Review Program" 
                       loading="eager" 
                       width="28"

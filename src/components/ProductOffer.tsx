@@ -10,7 +10,7 @@ interface ProductOfferProps {
 }
 
 // Define new gift card image
-const GIFT_CARD_IMAGE = "/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png";
+const GIFT_CARD_IMAGE = "/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png";
 
 const ProductOffer = ({ onClaim }: ProductOfferProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -89,7 +89,7 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
       </div>
 
       <a 
-        href="https://www.tapplink.co/21468/1084/image" 
+        href="https://www.tapplink.co/21468/1076/image" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="block w-full"

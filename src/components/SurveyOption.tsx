@@ -17,7 +17,7 @@ const SurveyOption = ({ label, selected, onClick, className }: SurveyOptionProps
       variant={selected ? "default" : "outline"}
       className={cn(
         "w-full p-4 h-auto justify-between text-left flex items-center gap-4 transition-all",
-        selected ? "border-2 border-primary bg-red-50 text-red-800" : "border border-gray-200",
+        selected ? "border-2 border-primary bg-red-50 text-red-800 shadow-sm" : "border border-gray-200",
         className
       )}
       onClick={onClick}

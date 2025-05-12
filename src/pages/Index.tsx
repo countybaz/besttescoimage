@@ -3,18 +3,19 @@ import { SurveyProvider, useSurvey } from "@/contexts/SurveyContext";
 import SurveyContainer from "@/components/SurveyContainer";
 import FAQ from "@/components/FAQ";
 import { Link } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-red-50 to-red-100 text-center">
       <SurveyProvider>
-        <header className="shadow-sm py-2 bg-white h-24 flex items-center">
+        <header className="shadow-sm py-2 bg-white sticky top-0 z-50">
           <div className="container mx-auto px-4 flex items-center justify-center">
             <HeaderContent />
           </div>
         </header>
         
-        <main className="container mx-auto relative">
+        <main className="container mx-auto relative pt-4">
           <SurveyContainer />
         </main>
       </SurveyProvider>
@@ -50,9 +51,10 @@ const Index = () => {
   );
 };
 
-// Create a separate component for the header content
+// Create a separate component for the header content with improved mobile styling
 const HeaderContent = () => {
   const { goToStep } = useSurvey();
+  const isMobile = useIsMobile();
   
   const handleLogoClick = () => {
     goToStep(0);
@@ -60,20 +62,24 @@ const HeaderContent = () => {
   
   return (
     <div 
-      className="flex items-center cursor-pointer" 
+      className="flex items-center justify-between w-full md:justify-center cursor-pointer" 
       onClick={handleLogoClick}
     >
-      <img 
-        src="/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png" 
-        alt="Tesco Review Program Logo" 
-        className="h-20 w-auto min-w-[80px] md:h-24"
-        width="100" 
-        height="100"
-        loading="eager"
-        fetchPriority="high"
-      />
-      <h1 className="text-xl font-bold text-primary">Tesco Review Program</h1>
-      <div className="ml-4">
+      <div className="flex items-center">
+        <img 
+          src="/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png" 
+          alt="Tesco Review Program Logo" 
+          className={`h-16 w-auto min-w-[60px] md:h-20 transition-all duration-200`}
+          width="80" 
+          height="80"
+          loading="eager"
+          fetchPriority="high"
+        />
+        <h1 className={`${isMobile ? 'text-lg' : 'text-xl'} font-bold text-primary`}>
+          Tesco Review Program
+        </h1>
+      </div>
+      <div className="ml-2 md:ml-4">
         <FAQ />
       </div>
     </div>

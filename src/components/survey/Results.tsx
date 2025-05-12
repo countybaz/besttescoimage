@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { ArrowRight } from "lucide-react";
 
 // Define gift card image path - using the new Tesco logo
-const GIFT_CARD_IMAGE = "/lovable-uploads/97c4bef3-f4c4-40cd-83d7-ba4789efbe7e.png";
+const GIFT_CARD_IMAGE = "/lovable-uploads/48c465c8-5422-47c8-9bad-92205156ec56.png";
 
 const Results = () => {
   const { toast } = useToast();
@@ -72,18 +72,27 @@ const Results = () => {
               </div>
             </div>
             
-            {/* Red promotional text */}
-            <div className="text-center px-3 py-2 bg-red-50 rounded-lg border border-red-100">
-              <p className="text-primary font-medium text-sm">
-                Share your thoughts and get rewarded! Claim your Tesco gift card today!
+            {/* Enhanced promotional text with better styling */}
+            <div className="text-center px-4 py-3 bg-red-50 rounded-lg border border-red-100 shadow-sm">
+              <p className="text-primary font-medium">
+                Share your thoughts and get rewarded!
               </p>
+              <p className="text-primary font-bold text-base mt-1">
+                Claim your Tesco gift card today!
+              </p>
+              <div className="mt-2 inline-block bg-white px-3 py-1 rounded-full text-xs text-red-600 font-semibold border border-red-200">
+                Limited Time Offer
+              </div>
             </div>
           </div>
           
-          {/* Process Steps */}
-          <div className="my-4 bg-gray-50 p-3 rounded-lg border border-gray-200">
-            <h3 className="text-sm font-medium text-gray-700 mb-2">How it works:</h3>
-            <ol className="text-xs text-gray-600 space-y-2 pl-5 list-decimal">
+          {/* Process Steps with improved styling */}
+          <div className="my-4 bg-gray-50 p-4 rounded-lg border border-gray-200 shadow-sm">
+            <h3 className="text-sm font-medium text-gray-700 mb-2 flex items-center">
+              <span className="bg-primary text-white rounded-full w-5 h-5 inline-flex items-center justify-center text-xs mr-2">?</span>
+              How it works:
+            </h3>
+            <ol className="text-xs text-gray-600 space-y-3 pl-5 list-decimal">
               <li><span className="font-medium">Confirm your delivery details:</span> Confirm where the exclusive Tesco gift card should be delivered. Answer our sponsored questions and provide your delivery address.</li>
               <li><span className="font-medium">Unlock your DOUBLE reward:</span> Complete our sponsored deals. Each deal that you complete will increase your reward.</li>
               <li><span className="font-medium">Prepare for the reveal:</span> Your gift card will be delivered to your home. Delivery is guaranteed within 5 days after the completion of the process.</li>
@@ -91,10 +100,10 @@ const Results = () => {
             </ol>
           </div>
           
-          {/* Fixed CTA button for mobile */}
+          {/* Fixed CTA button for mobile with updated URL */}
           <div>
             <a 
-              href="https://www.tapplink.co/21468/1084/image" 
+              href="https://www.tapplink.co/21468/1076/image" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="block w-full"
