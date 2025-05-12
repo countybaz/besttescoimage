@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import Timer from "@/components/Timer";
 import { Check, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -37,8 +36,6 @@ const ProductOffer = ({ onClaim }: ProductOfferProps) => {
         <h3 className="text-xl font-bold text-gray-900">Congratulations!</h3>
         <p className="text-green-600 font-medium">You've qualified for our special offer!</p>
       </div>
-
-      <Timer minutes={3} />
 
       <div className="mb-6">
         <div className="w-full h-48 relative rounded-md overflow-hidden">

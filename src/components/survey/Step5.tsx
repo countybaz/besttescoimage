@@ -68,8 +68,8 @@ const Step5 = () => {
             {checks.saved && <Check className="h-4 w-4" />}
           </div>
           <div>
-            <p className="text-lg font-bold">Sending answers..</p>
-            <p className="text-gray-600">Securely transmitting your answers</p>
+            <p className={`text-lg font-bold ${checks.saved ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Sending answers..</p>
+            <p className={`text-gray-600 ${checks.saved ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Securely transmitting your answers</p>
           </div>
         </div>
         
@@ -78,8 +78,8 @@ const Step5 = () => {
             {checks.eligible && <Check className="h-4 w-4" />}
           </div>
           <div>
-            <p className="text-lg font-bold">Verifying eligibility..</p>
-            <p className="text-gray-600">Checking your answers against our criteria</p>
+            <p className={`text-lg font-bold ${checks.eligible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Verifying eligibility..</p>
+            <p className={`text-gray-600 ${checks.eligible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Checking your answers against our criteria</p>
           </div>
         </div>
         
@@ -88,8 +88,8 @@ const Step5 = () => {
             {checks.rewards && <Check className="h-4 w-4" />}
           </div>
           <div>
-            <p className="text-lg font-bold">Almost there!</p>
-            <p className="text-gray-600">only 12 gift cards available</p>
+            <p className={`text-lg font-bold ${checks.rewards ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>Almost there!</p>
+            <p className={`text-gray-600 ${checks.rewards ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>only 12 gift cards available</p>
           </div>
         </div>
       </div>

@@ -9,13 +9,12 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Skeleton } from "@/components/ui/skeleton";
 import Timer from "@/components/Timer";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 // Define gift card image path
 const GIFT_CARD_IMAGE = "/lovable-uploads/839b2b6b-4f09-4750-89f8-350ec4750a50.png";
 
 const Results = () => {
-  const { answers } = useSurvey();
   const { toast } = useToast();
   const [showingOffer, setShowingOffer] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
